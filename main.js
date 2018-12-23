@@ -11,7 +11,7 @@ function createWindow() {
         app.quit();
     });
 
-    Menu.setApplicationMenu(null);
+    //Menu.setApplicationMenu(null);
 }
 
 app.on('ready', createWindow);

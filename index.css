@@ -1,0 +1,41 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    background-color: rgb(255, 250, 245);
+}
+
+#container {
+    margin: 50px auto;
+    width: min-content;
+    height: min-content;
+}
+
+#numbers {
+    --numSize: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, var(--numSize));
+    grid-template-rows: repeat(4, var(--numSize));
+    grid-gap: 15px;
+
+    line-height: var(--numSize);
+    text-align: center;
+}
+
+#numbers > .number {
+    background-color: rgb(142, 164, 206);
+    border-color: rgb(41, 41, 41);
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px rgb(146, 165, 195);
+    transition: 0.15s;
+    cursor: default;
+}
+
+#numbers > .number:hover {
+    box-shadow: 5px 5px 15px rgb(146, 165, 195);
+}
+
+#numbers > .number.num0 {
+    grid-column: 1 / 3;
+}
