@@ -10,5 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^3.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kostyan1996/Simple-electron-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kostyan1996/Simple-electron-calculator/issues"
+  },
+  "homepage": "https://github.com/Kostyan1996/Simple-electron-calculator#readme"
 }
