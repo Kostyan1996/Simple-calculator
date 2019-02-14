@@ -1,41 +1,62 @@
+:root {
+    --buttonSize: 50px;
+}
+
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     
     background-color: rgb(255, 250, 245);
+
+    font-family: museoSans;
+    font-weight: 700;
 }
 
 #container {
     margin: 50px auto;
     width: min-content;
     height: min-content;
+
+    border-radius: 5px;
+    
+    overflow: hidden;
     border: 1px solid black;
-    border-radius: 10px;
-}
-
-#numbers {
-    --numSize: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, var(--numSize));
-    grid-template-rows: repeat(4, var(--numSize));
-
-    line-height: var(--numSize);
-    text-align: center;
-}
-
-#numbers > .number {
-    background-color: rgb(142, 164, 206);
-    border-color: rgb(41, 41, 41);
     box-shadow: 2px 2px 20px rgb(146, 165, 195);
-    transition: 0.15s;
+}
+
+#btnContainer {
+    display: grid;
+    grid-template-columns: repeat(4, var(--buttonSize));
+}
+
+.button {
+    line-height: var(--buttonSize);
+    width: var(--buttonSize);
+
+    text-align: center;
     cursor: default;
+    border-color: rgb(41, 41, 41);
+    position: relative;
+    background-image: radial-gradient(rgb(142, 164, 206), rgb(99, 126, 175));
 }
 
-#numbers > .number:hover {
-    box-shadow: 5px 5px 15px rgb(146, 165, 195);
+.button:hover {
+    background-image: radial-gradient(rgb(195, 209, 236), rgb(99, 126, 175));
 }
 
-#numbers > .number.num0 {
-    grid-column: 1 / 3;
+.screen {
+    grid-column: 1 / 5;
+    height: var(--buttonSize);
+    line-height: var(--buttonSize);
+    text-align: right;
+    padding-right: 10px;
+    background-color: black;
+    color: rgb(133, 84, 161);
+    font-size: 24px;
+}
+
+@font-face {
+  font-family: museoSans;
+  src: url(museosans-500.ttf);
 }
