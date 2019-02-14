@@ -10,6 +10,8 @@ html, body {
     margin: 50px auto;
     width: min-content;
     height: min-content;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 #numbers {
@@ -17,7 +19,6 @@ html, body {
     display: grid;
     grid-template-columns: repeat(3, var(--numSize));
     grid-template-rows: repeat(4, var(--numSize));
-    grid-gap: 15px;
 
     line-height: var(--numSize);
     text-align: center;
@@ -26,7 +27,6 @@ html, body {
 #numbers > .number {
     background-color: rgb(142, 164, 206);
     border-color: rgb(41, 41, 41);
-    border-radius: 5px;
     box-shadow: 2px 2px 20px rgb(146, 165, 195);
     transition: 0.15s;
     cursor: default;
