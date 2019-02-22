@@ -57,6 +57,7 @@ html, body {
 #digits {
   width: min-content;
   float: right;
+  white-space: nowrap;
 }
 
 @font-face {

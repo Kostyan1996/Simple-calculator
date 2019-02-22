@@ -1,7 +1,7 @@
 let value = [];
 
 function formatSetScreen() {
-  document.getElementById('digits').innerText = value.join('');
+  document.getElementById('digits').innerText = value.join(' ');
 }
 
 function push(val) {
@@ -19,7 +19,8 @@ function clear() {
 }
 
 function backspace() {
-  // value = value.slice(0, -1);
+  const val = value[value.length - 1];
+  if (val.search(/[0-9,]/) !== -1) value[value.length - 1] = val.slice(0, -1);
 }
 
 function add() {
@@ -29,11 +30,23 @@ function add() {
   }
 }
 
-function equals() {
-  for (let i = 0; i < value.length; i++) {
-
+function substract() {
+  const lastVal = value[value.length - 1];
+  if (lastVal && lastVal.search(/[0-9,]/) !== -1) {
+    value.push('-');
   }
-  // value = parseFloat(value) + parseFloat(prevValue);
+}
+
+function equals() {
+  let result = parseFloat(value[0]);
+  for (let i = 1; i < value.length - 1; i++) {
+    if (value[i] === '+') {
+      result += parseFloat(value[i + 1]) || 0;
+    } else if (value[i] === '-') {
+      result -= parseFloat(value[i + 1]) || 0;
+    }
+  }
+  value = [result];
 }
 
 document.getElementById('container').onclick = (event) => {
@@ -42,6 +55,7 @@ document.getElementById('container').onclick = (event) => {
   else if (tgt.contains('clear')) clear();
   else if (tgt.contains('backspace')) backspace();
   else if (tgt.contains('add')) add();
+  else if (tgt.contains('substract')) substract();
   else if (tgt.contains('equals')) equals();
   formatSetScreen();
 };
